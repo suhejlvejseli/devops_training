@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-app
+  namespace: devops-training
+  labels:
+    app: html-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: html-app
+  template:
+    metadata:
+      labels:
+        app: html-app
+    spec:
+      containers:
+        - name: html-app
+          imagePullPolicy: Always
+          image: suhejlvejseli/html-app:v1
+          ports:
+            - containerPort: 80
