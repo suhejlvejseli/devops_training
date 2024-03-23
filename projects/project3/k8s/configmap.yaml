@@ -6,5 +6,5 @@ metadata:
   labels:
     app: mysql-app
 data:
-  MYSQL_ROOT_PASSWORD: "12121313abac"
-  MYSQL_DATABASE: "lab-database"
+  root_password: "12121313abac"
+  database_name: "lab-database"

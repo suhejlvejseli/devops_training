@@ -19,8 +19,16 @@ spec:
         - name: mysql-app
           imagePullPolicy: Always
           image: mysql:latest
-          envFrom:
-            - configMapRef:
-                name: mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql
+                  key: root_password
+            - name: MYSQL_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql
+                  key: database_name
           ports:
             - containerPort: 3306
