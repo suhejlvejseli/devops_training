@@ -18,6 +18,6 @@ spec:
       containers:
         - name: html-app
           imagePullPolicy: Always
-          image: suhejlvejseli/html-app:v1
+          image: suhejlvejseli/html-app:v2
           ports:
             - containerPort: 80

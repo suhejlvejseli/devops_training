@@ -8,5 +8,5 @@ spec:
     app: html-app
   ports:
     - protocol: TCP
-      port: 8081
+      port: 8000
       targetPort: 80

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-app
+  namespace: devops-training
+  labels:
+    app: mysql-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql-app
+  template:
+    metadata:
+      labels:
+        app: mysql-app
+    spec:
+      containers:
+        - name: mysql-app
+          imagePullPolicy: Always
+          image: mysql:latest
+          envFrom:
+            - configMapRef:
+                name: mysql
+          ports:
+            - containerPort: 3306
