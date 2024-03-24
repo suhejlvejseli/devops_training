@@ -4,4 +4,4 @@ metadata:
   name: test-cm
   namespace: suhejl
 data:
-  db-port: "3307"
+  db-port: "3309"

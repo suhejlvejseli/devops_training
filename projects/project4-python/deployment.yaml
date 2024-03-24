@@ -19,11 +19,12 @@ spec:
         - name: python-app
           imagePullPolicy: Always
           image: abhishekf5/python-sample-app-demo:v1
-          env:
-            - name: DB-PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: test-cm
-                  key: db-port
+          volumeMounts:
+            - name: db-connection
+              mountPath: /opt
           ports:
             - containerPort: 8000
+      volumes:
+        - name: db-connection
+          configMap:
+            name: test-cm
