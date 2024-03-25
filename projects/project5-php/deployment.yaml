@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minesweeper-game
+  namespace: devops-training
+  labels:
+    app: minesweeper-game
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: minesweeper-game
+  template:
+    metadata:
+      labels:
+        app: minesweeper-game
+    spec:
+      containers:
+        - name: minesweeper-game
+          imagePullPolicy: Always
+          image: suhejlvejseli/minesweeper-game:latest
+          ports:
+            - containerPort: 80
