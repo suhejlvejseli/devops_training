@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: labs
+
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: labs-resource-quotas
+  namespace: labs
+spec:
+  hard:
+    pods: "4"
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
