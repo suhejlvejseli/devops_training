@@ -26,6 +26,6 @@ spec:
               name: mongo-volume
       volumes:
         - name: mongo-volume
-          hostPath: 
-            path: /data
+          persistentVolumeClasim:
+            claimName: mongo-pvc
       
