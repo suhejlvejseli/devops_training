@@ -26,6 +26,6 @@ spec:
               name: mongo-volume
       volumes:
         - name: mongo-volume
-          persistentVolumeClasim:
+          persistentVolumeClaim:
             claimName: mongo-pvc
       
